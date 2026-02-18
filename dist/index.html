@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author">
+    <meta content="Minimalist Online UUID Generator (v1, v4, v7)" name="description">
+    <meta name="theme-color" content="#2d2c2c">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta property="og:url" content="https://">
+    <meta property="og:title" content="UUID Generator">
+    <meta property="og:description" content="Minimalist Online UUID Generator (v1, v4, v7)">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://">
+    <title>UUID Generator</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg">
+    <link rel="apple-touch-icon" href="/web/icon.svg">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link href="/app.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" type="text/css" rel="stylesheet">
+    <script defer src="/wasm_exec.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <div class="page-wrapper with-navbar">
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">Minimalist UUID Generator</a>
+        <ul class="navbar-nav d-none d-md-flex">
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://github.com/google/uuid">UUID Library</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="card p-20">
+                <h2 class="card-title">Settings</h2>
+                <div class="form-group">
+                  <label for="version-select">UUID Version</label>
+                  <select class="form-control" id="version-select">
+                    <option value="1">Version 1 (Time-based)</option>
+                    <option value="4" selected>Version 4 (Random)</option>
+                    <option value="7">Version 7 (Time-ordered)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="quantity-input">Quantity (1-100)</label>
+                  <input type="number" class="form-control" id="quantity-input" min="1" max="100" value="0">
+                </div>
+                <div class="custom-control custom-checkbox mb-10">
+                  <input type="checkbox" class="custom-control-input" id="hyphens-check" checked="false">
+                  <label class="custom-control-label" for="hyphens-check">Hyphens</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-20">
+                  <input type="checkbox" class="custom-control-input" id="uppercase-check" checked="false">
+                  <label class="custom-control-label" for="uppercase-check">Uppercase</label>
+                </div>
+                <button class="btn btn-primary btn-block">Generate UUIDs</button>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="card p-20">
+                <div class="d-flex justify-content-between align-items-center mb-10">
+                  <h2 class="card-title m-0">Result</h2>
+                  <button class="btn">Copy to Clipboard</button>
+                </div>
+                <textarea class="form-control" style="height:400px;font-family:monospace" readonly></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside id="app-wasm-loader" class="goapp-app-info">
+      <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" alt="wasm loader icon" src="/web/icon.svg">
+      <p id="app-wasm-loader-label" class="goapp-label">0%</p>
+    </aside>
+  </body>
+</html>
