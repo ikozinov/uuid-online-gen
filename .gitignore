@@ -1,0 +1,16 @@
+# Binaries
+server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# WebAssembly
+web/app.wasm
+
+# Go
+go.work
+
+# OS
+.DS_Store
